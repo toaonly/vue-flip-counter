@@ -179,10 +179,17 @@ $width: 75px;
 $height: $width * 1.5;
 $sec: 500ms;
 
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Helvetica 43 Light Extended'), url('../assets/HelveticaNeue-LightExt.woff') format('woff');
+}
+
 .number-counter {
   position: relative;
-  font-family: 'Helvetica Neue';
-
+  
   ._numbers {
     position: relative;
     margin: 0 10px;
@@ -459,6 +466,10 @@ $sec: 500ms;
   .flip-col {
     flex: 1;
     height: 100%;
+
+    span {
+      font-family: 'Helvetica Neue';
+    }
   }
 }
 
