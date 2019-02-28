@@ -1,6 +1,6 @@
 {
   "name": "vue-flip-counter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vue.js Flip Counter",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,12 @@
   },
   "files": [
     "index.js",
-    "components/index.vue"
-  ]
+    "components/index.vue",
+    "assets/*.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toaonly/vue-flip-counter.git",
+    "homepage": "https: //github.com/toaonly/vue-flip-counter#readme"
+  }
 }
