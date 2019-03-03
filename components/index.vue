@@ -6,14 +6,14 @@
         <div class="current">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
         </div>
         <div class="next">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span>{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
@@ -22,14 +22,14 @@
         <div class="next">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span>{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
         <div class="current">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
         </div>
@@ -41,19 +41,19 @@
         <div :style="{ height: halfHeight }" class="flip-cover-s">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
         </div>
         <div :style="{ height: halfHeight }" class="flip-cover-e">
           <div class="flip-row front">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
           <div class="flip-row back">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span>{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
@@ -62,19 +62,19 @@
         <div :style="{ height: halfHeight }" class="flip-cover-e">
           <div class="flip-row front">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
           <div class="flip-row back">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span>{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
         <div :style="{ height: halfHeight }" class="flip-cover-s">
           <div class="flip-row">
             <div class="flip-col">
-              <span style="font-family: 'Helvetica Neue'">{{ value }}</span>
+              <span>{{ value }}</span>
             </div>
           </div>
         </div>
@@ -466,6 +466,10 @@ $sec: 500ms;
   .flip-col {
     flex: 1;
     height: 100%;
+
+    span {
+      font-family: 'Helvetica Neue' !important;
+    }
   }
 }
 
