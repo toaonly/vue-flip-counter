@@ -46,12 +46,12 @@
           </div>
         </div>
         <div :style="{ height: halfHeight }" class="flip-cover-e">
-          <div class="flip-row front">
+          <div :style="{ lineHeight: height }" class="flip-row front">
             <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
-          <div class="flip-row back">
+          <div :style="{ lineHeight: height }" class="flip-row back">
             <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
@@ -60,12 +60,12 @@
       </template>
       <template v-else>
         <div :style="{ height: halfHeight }" class="flip-cover-e">
-          <div class="flip-row front">
+          <div :style="{ lineHeight: height }" class="flip-row front">
             <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
-          <div class="flip-row back">
+          <div :style="{ lineHeight: height }" class="flip-row back">
             <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
@@ -224,7 +224,10 @@ $sec: 500ms;
           bottom: 0;
 
           .flip-col {
-            margin-top: 2%;
+            span {
+              position: relative;
+              top: 0%;
+            }
           }
         }
       }
@@ -241,7 +244,10 @@ $sec: 500ms;
           bottom: 0;
 
           .flip-col {
-            margin-top: -73%;
+            span {
+              position: relative;
+              top: -100%;
+            }
           }
         }
       }
@@ -290,7 +296,10 @@ $sec: 500ms;
             bottom: 0;
 
             .flip-col {
-              margin-top: 2%;
+              span {
+                position: relative;
+                top: 0%;
+              }
             }
           }
         }
@@ -305,7 +314,10 @@ $sec: 500ms;
             bottom: 0;
 
             .flip-col {
-              margin-top: -73%;
+              span {
+                position: relative;
+                top: -100%;
+              }
             }
 
             &.front {
@@ -318,7 +330,10 @@ $sec: 500ms;
               opacity: 0;
 
               .flip-col {
-                margin-top: 2%;
+                span {
+                  position: relative;
+                  top: 0%;
+                }
               }
             }
           }
@@ -414,7 +429,10 @@ $sec: 500ms;
       .current {
         .flip-row {
           .flip-col {
-            margin-top: -73%;
+            span {
+              position: relative;
+              top: -100%;
+            }
           }
         }
       }
@@ -422,7 +440,10 @@ $sec: 500ms;
       .next {
         .flip-row {
           .flip-col {
-            margin-top: 2%;
+            span {
+              position: relative;
+              top: 0%;
+            }
           }
         }
       }
@@ -443,7 +464,10 @@ $sec: 500ms;
               transform: rotateX(-180deg);
 
               .flip-col {
-                margin-top: -73%;
+                span {
+                  position: relative;
+                  top: -100%;
+                }
               }
             }
           }
@@ -465,6 +489,7 @@ $sec: 500ms;
   overflow: hidden;
 
   .flip-col {
+    position: relative;
     flex: 1;
     height: 100%;
     line-height: $height;
