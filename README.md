@@ -9,7 +9,7 @@ Flip counter for Vue.js
 npm install --save vue-flip-counter
 ```
 
-# Getting Started
+# Initialization
 ```
 import Vue from 'vue'
 import VueFlipCounter from 'vue-flip-counter'
