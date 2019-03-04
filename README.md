@@ -35,3 +35,5 @@ Vue.use(VueFlipCounter);
 | `size` | `string`, `number` | `75` |
 | `interval` | `string`, `number` | `1000` |
 | `mode` | `'up', 'down'` | `'up'` |
+| `min` | `number`(`0` ~ `9`) | `0` |
+| `max` | `number`(`0` ~ `9`) | `9` |

@@ -13,7 +13,7 @@
         <div class="next">
           <div :style="{ lineHeight: height }" class="flip-row">
             <div :style="{ lineHeight: height }" class="flip-col">
-              <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span :style="{ lineHeight: height }">{{ checkRange(value + (mode === 'up' ? 1 : -1)) }}</span>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="next">
           <div :style="{ lineHeight: height }" class="flip-row">
             <div :style="{ lineHeight: height }" class="flip-col">
-              <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span :style="{ lineHeight: height }">{{ checkRange(value + (mode === 'up' ? 1 : -1)) }}</span>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
           </div>
           <div :style="{ lineHeight: height }" class="flip-row back">
             <div :style="{ lineHeight: height }" class="flip-col">
-              <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span :style="{ lineHeight: height }">{{ checkRange(value + (mode === 'up' ? 1 : -1)) }}</span>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
           </div>
           <div :style="{ lineHeight: height }" class="flip-row back">
             <div :style="{ lineHeight: height }" class="flip-col">
-              <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
+              <span :style="{ lineHeight: height }">{{ checkRange(value + (mode === 'up' ? 1 : -1)) }}</span>
             </div>
           </div>
         </div>
@@ -111,6 +111,24 @@ export default {
       default: 'up'
     },
 
+    min: {
+      type: Number,
+      default: 0,
+      validator(value) {
+        if(value < 0 || value > 9) return false;
+        return true;
+      }
+    },
+
+    max: {
+      type: Number,
+      default: 9,
+      validator(value) {
+        if(value < 0 || value > 9) return false;
+        return true;
+      }
+    },
+
     size: {
       type: [String, Number],
       default: 75,
@@ -131,8 +149,8 @@ export default {
 
   methods: {
     checkRange(value) {
-      if(value < 0) value = 9;
-      else if(value > 9) value = 0;
+      if(value < this.min) value = this.max;
+      else if(value > this.max) value = this.min;
 
       return value;
     },
