@@ -3,6 +3,8 @@
 
 Flip counter for Vue.js
 
+[Demo](https://toaonly.github.io/vue-flip-counter/)
+
 
 # Getting Started
 ```
