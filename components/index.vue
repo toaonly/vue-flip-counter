@@ -214,7 +214,7 @@ $sec: 500ms;
     display: inline-block;
     width: $width;
     height: $height;
-    background: #eee;
+    background: #3A3A3A;
     border-radius: 4px;
     perspective: $width * 5;
 
