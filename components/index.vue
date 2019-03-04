@@ -4,15 +4,15 @@
     <div :style="{ fontSize }" class="background-number">
       <template v-if="mode === 'up'">
         <div class="current">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
         </div>
         <div class="next">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
@@ -20,15 +20,15 @@
       </template>
       <template v-else>
         <div class="next">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
         <div class="current">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
@@ -39,20 +39,20 @@
     <div :style="{ width, fontSize }" class="_number" data-number="1">
       <template v-if="mode === 'up'">
         <div :style="{ height: halfHeight }" class="flip-cover-s">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
         </div>
         <div :style="{ height: halfHeight }" class="flip-cover-e">
           <div class="flip-row front">
-            <div class="flip-col">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
           <div class="flip-row back">
-            <div class="flip-col">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
@@ -61,19 +61,19 @@
       <template v-else>
         <div :style="{ height: halfHeight }" class="flip-cover-e">
           <div class="flip-row front">
-            <div class="flip-col">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
           <div class="flip-row back">
-            <div class="flip-col">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value + (mode === 'up' ? 1 : -1) | next }}</span>
             </div>
           </div>
         </div>
         <div :style="{ height: halfHeight }" class="flip-cover-s">
-          <div class="flip-row">
-            <div class="flip-col">
+          <div :style="{ lineHeight: height }" class="flip-row">
+            <div :style="{ lineHeight: height }" class="flip-col">
               <span :style="{ lineHeight: height }">{{ value }}</span>
             </div>
           </div>
@@ -461,11 +461,13 @@ $sec: 500ms;
   position: absolute;
   display: flex;
   width: 100%;
+  line-height: $height;
   overflow: hidden;
 
   .flip-col {
     flex: 1;
     height: 100%;
+    line-height: $height;
 
     span {
       font-family: 'Helvetica Neue' !important;
