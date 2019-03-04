@@ -1,6 +1,6 @@
 {
   "name": "vue-flip-counter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Vue.js Flip Counter",
   "main": "index.js",
   "scripts": {
