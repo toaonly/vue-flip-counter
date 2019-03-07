@@ -33,7 +33,8 @@ Vue.use(VueFlipCounter);
 | Parameter | Type | Default |
 |---|---|---|
 | `size` | `string`, `number` | `75` |
-| `interval` | `string`, `number` | `1000` |
+| `interval` | `string`, `number`, `false` | `1000` |
 | `mode` | `'up', 'down'` | `'up'` |
 | `min` | `number`(`0` ~ `9`) | `0` |
 | `max` | `number`(`0` ~ `9`) | `9` |
+| `trigger` | `{ value: number, event(): void }` | `null` |

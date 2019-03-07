@@ -102,7 +102,7 @@ export default {
     value: Number,
 
     interval: {
-      type: [ Number, String ],
+      type: [ Number, String, Boolean ],
       default: 1000
     },
 
@@ -135,7 +135,9 @@ export default {
       validator(value) {
         return !isNaN(value);
       }
-    }
+    },
+
+    trigger: Object
   },
 
   computed: {
@@ -162,28 +164,29 @@ export default {
       if($numbers instanceof HTMLElement) {
         $numbers.classList.add('active');
         let nextValue = this.checkRange(this.value + (this.mode === 'up' ? 1 : -1));
+
+        if(this.trigger && this.trigger.value === this.value) {
+          this.trigger.event();
+        }
   
         setTimeout(() => {
           $numbers.classList.remove('active');
+          
           this.$emit('input', nextValue);
         }, 500);
       }
     }
   },
 
-  filters: {
-    next(value) {
-      if(value < 0) value = 9;
-      else if(value > 9) value = 0;
-
-      return value;
-    }
-  },
-
   created() {
+    let interval = this.interval;
+
+    if(interval === false) return true;
+    if(interval === true) interval = 1000;
+
     this._interval = setInterval(() => {
       this.increase();
-    }, Number(this.interval));
+    }, Number(interval));
   },
 
   destroyed() {
